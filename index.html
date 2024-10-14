@@ -98,7 +98,7 @@
         <div class="card-group justify-content-center pt-4">
           <div class="card">
             <div class="content" id="tablet">
-              <img src="./assets/img/tablet-img.png" alt="" width="100%">
+              <img src="./assets/img/screenshot.png" alt="" width="100%">
 
               <div id=" glow" class="glow">
               </div>
@@ -178,7 +178,7 @@
           </svg>
         </div>
         <section id="section-0" class="section position-relative">
-          <h3 class="heading-1">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
+          <h3 class="heading-1">Since the dawn of<br> property management from<br> cavemen to corporate guy </h3>
           <span class="rocket-container icon-containers" id="title0">
             <img class="rocket" src="./assets/img/realezi-rocket.png" width="60px" alt="">
             <div class="text-circle text-1">World-class digital</div>
@@ -193,17 +193,17 @@
           <h3 class="heading-2">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
         </section>
         <section id="section-1" class="section">
-          <span class="icon-container icon-containers mt-3" id="title1">
+          <span class="icon-container icon-containers icon-2 position-absolute mt-3" id="title1">
             <img src="./assets/img/handshake.png" alt="Handshake icon" width="100px">
           </span>
           <h3 class="heading-3">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
-          <span class="icon-container-2 icon-containers " id="title1">
+          <span class="icon-container-2 icon-containers icon-3" id="title1">
             <img src="./assets/img/transparency.png" alt="Magnifying glass icon" width="70px">
           </span>
-          <h3 class="heading-4 ">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
+          <h3 class="heading-4">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
         </section>
         <section id="section-2" class="section">
-          <span class="icon-container-3 icon-containers" id="title2">
+          <span class="icon-container-3 icon-containers position-absolute" id="title2">
             <img src="./assets/img/idea.png" alt="" width="65px">
           </span>
           <h3 class="heading-5">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
@@ -221,7 +221,7 @@
   <!-- Rocket Section End-->
 
   <!-- Teams section Start-->
-  <section id="naxt-div" class="teams-section py-4 text-center">
+  <section id="next-div" class="teams-section py-4 text-center">
     <h2>Real people having a real impact</h2>
     <p>Discover how everyday <span>heroes</span> are shaping<br> a better world</p>
     <div class="teams-card-container">
@@ -535,6 +535,94 @@
   <script defer src="./assets/js/footer.js"></script>
   <script src="assets/js/rive-animations.js"></script>
   <!-- <script src="assets/js/rocket-with-clouds.js"></script> -->
+  <!-- <script>
+    function adjustTopValues() {
+      // Get the current window height
+      let windowHeight = window.innerHeight;
+
+      // Set an initial base value for top (e.g., 5%)
+      let baseTopValue = 9;  // Starting point for top value in percentage
+      // For each pixel change, reduce the top by 0.05%
+      // Reference height is 1000px, adjust according to your base size
+      let reductionFactor = (1000 - windowHeight) * 0.05; // 0.05% for every 1px
+
+      // Calculate new top value
+      let topValue = baseTopValue - reductionFactor;
+
+      // Apply the new top value to both elements
+      document.querySelector('.gradient-section .banner .parallax-container .text-overlay').style.top = `${topValue}%`;
+      document.querySelector('.gradient-section .banner .parallax-container .second-text-overlay').style.top = `${topValue - 0.5}%`; // Adjust second element slightly
+    }
+
+    // Run when the page loads
+    window.onload = adjustTopValues;
+
+    // Listen for window resize events to adjust the top value dynamically on height change
+    window.addEventListener('resize', adjustTopValues);
+  </script> -->
+  <!-- <script>
+    function adjustLeft() {
+      const baseScreenWidth = 1440;
+      let baseLeftPercentage = 10.8;
+      let baseRightPercentage = 20;
+      const stepSize = 0.07;
+      const stepSize2 = 0.1;
+      const screenWidth = window.innerWidth;
+
+      // Special case for 1200px width
+      if (screenWidth === 1200) {
+        document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = '10.25%';
+        document.querySelector('.heading-3').style.left = '12%'; // Adjust left for heading-3
+        document.querySelector('.icon-2').style.left = '16%';    // Adjust left for icon-2
+        document.querySelector('.heading-4').style.right = '-10%'; // Adjust left for heading-4
+        document.querySelector('.icon-3').style.right = '0%';    // Adjust right for icon-3
+        return;
+      }
+
+      // Continue normal calculations for other screen widths
+      const difference = baseScreenWidth - screenWidth;
+      const steps = Math.round(difference / 32);
+
+      let newLeft = baseLeftPercentage - (steps * stepSize);
+      let newIcon2Left = steps * stepSize2;
+      let newRight = baseRightPercentage - (steps * stepSize);
+
+      // Apply new left values
+      document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = newLeft + '%';
+      document.querySelector('.heading-3').style.left = (newLeft + - 6) + '%'; // Adjust heading-3
+      document.querySelector('.icon-2').style.left = (newIcon2Left + 12) + '%';    // Adjust icon-2
+      document.querySelector('.heading-4').style.right = (newRight + -16) + '%'; // Adjust heading-4
+      document.querySelector('.icon-3').style.right = (newRight + -8) + '%';     // Adjust right for icon-3
+    }
+
+    window.addEventListener('load', adjustLeft);
+    window.addEventListener('resize', adjustLeft);
+
+  </script> -->
+  <!-- <script>
+    function adjustLayout() {
+      const baseScreenWidth = 1440;
+      const baseScreenHeight = 778;
+      let baseLeftPercentage = 10.8;
+      const stepSize = 0.05;
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      const widthDifference = baseScreenWidth - screenWidth;
+      const steps = Math.round(widthDifference / 32);
+      let newLeft = baseLeftPercentage - (steps * stepSize);
+
+      let newHeight = (screenHeight / baseScreenHeight) * 100.66; // Adjust height relative to screen height
+
+      const svgLine = document.querySelector('.horizontal-scrolling .wrapper .svg-line');
+      svgLine.style.left = newLeft + '%';
+      svgLine.style.height = newHeight + 'vh'; // Update height in 'vh' (viewport height units)
+    }
+
+    window.addEventListener('load', adjustLayout);
+
+    window.addEventListener('resize', adjustLayout);
+  </script> -->
 </body>
 
 </html>

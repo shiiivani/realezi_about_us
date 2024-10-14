@@ -26,7 +26,7 @@ body {
 .gradient-section .banner {
   position: relative;
   overflow: hidden;
-  height: 130vh;
+  height: 100vh;
   margin-top: -110px;
   background-color: #3899e8;
 }
@@ -40,7 +40,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   -o-object-fit: contain;
   object-fit: contain;
 }
@@ -49,7 +49,8 @@ body {
   z-index: 2;
 }
 
-.gradient-section .banner .parallax-container .parallax-image.img-1 {
+.gradient-section .banner .parallax-container .parallax-image.img-1,
+.gradient-section .banner .parallax-container .parallax-image.img-2 {
   z-index: 10;
 }
 
@@ -59,7 +60,7 @@ body {
   width: 100%;
   text-align: center;
   color: white;
-  top: 9%;
+  /* top: 9%; */
 }
 .gradient-section .banner .parallax-container .text-overlay h1,
 .gradient-section .banner .parallax-container .second-text-overlay h1 {
@@ -76,6 +77,406 @@ body {
 
 .second-text-overlay {
   z-index: 3;
+}
+
+@media screen and (max-width: 1600px) and (max-height: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 6%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 5%;
+  }
+}
+
+@media screen and (max-width: 1600px) and (max-height: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 4%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 3%;
+  }
+}
+
+@media screen and (max-width: 1600px) and (max-height: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: -2%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: -3%;
+  }
+}
+
+@media screen and (max-width: 1600px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: -6%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: -7%;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .gradient-section .banner,
+  .gradient-section .banner .parallax-container,
+  .gradient-section .banner .parallax-container .parallax-image.img-1,
+  .gradient-section .banner .parallax-container .parallax-image.img-2,
+  .gradient-section .banner .parallax-container .parallax-image.img-3 {
+    height: 700px;
+  }
+}
+
+@media screen and (max-width: 1500px) and (max-width: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 5%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 4%;
+  }
+}
+
+@media screen and (max-width: 1500px) and (max-width: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 4%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 3%;
+  }
+}
+
+@media screen and (max-width: 1500px) and (max-width: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 3%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 2%;
+  }
+}
+
+@media screen and (max-width: 1500px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: -3%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: -5%;
+  }
+}
+
+@media screen and (max-width: 1300px) and (max-width: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 7%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 6%;
+  }
+}
+
+@media screen and (max-width: 1300px) and (max-width: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 6%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 5%;
+  }
+}
+
+@media screen and (max-width: 1300px) and (max-width: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 5%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 4%;
+  }
+}
+
+@media screen and (max-width: 1300px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: -2%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: -5%;
+  }
+}
+
+@media screen and (max-width: 1200px) and (max-width: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 7%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 5%;
+  }
+}
+
+@media screen and (max-width: 1200px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: -1%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: -5%;
+  }
+}
+
+@media screen and (max-width: 1100px) and (max-height: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 10%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 6%;
+  }
+}
+
+@media screen and (max-width: 1100px) and (max-height: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 7%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 4%;
+  }
+}
+
+@media screen and (max-width: 1100px) and (max-height: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 5%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 0%;
+  }
+}
+
+@media screen and (max-width: 1100px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 2%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: -5%;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-height: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 12%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 8%;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-height: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 10%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 6%;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-height: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 7%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 1%;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 3%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: -3%;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-height: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 16%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 10%;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-height: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 13%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 8%;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-height: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 10%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 4%;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 6%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: -1%;
+  }
+}
+
+@media screen and (max-width: 800px) and (max-height: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 17%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 11%;
+  }
+}
+
+@media screen and (max-width: 800px) and (max-height: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 16%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 9%;
+  }
+}
+
+@media screen and (max-width: 800px) and (max-height: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 12%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 5%;
+  }
+}
+
+@media screen and (max-width: 800px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 8%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 0%;
+  }
+}
+
+@media screen and (max-width: 700px) and (max-height: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 22%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 15%;
+  }
+}
+
+@media screen and (max-width: 700px) and (max-height: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 20%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 12%;
+  }
+}
+
+@media screen and (max-width: 700px) and (max-height: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 20%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 12%;
+  }
+}
+
+@media screen and (max-width: 700px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 12%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 3%;
+  }
+}
+
+@media screen and (max-width: 600px) and (max-height: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 23%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 15%;
+  }
+}
+
+@media screen and (max-width: 600px) and (max-height: 900px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 22%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 14%;
+  }
+}
+
+@media screen and (max-width: 600px) and (max-height: 800px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 19%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 9%;
+  }
+}
+
+@media screen and (max-width: 600px) and (max-height: 700px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 15%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 4.5%;
+  }
+}
+
+@media screen and (max-width: 500px) and (max-height: 1000px) {
+  .gradient-section .banner .parallax-container .text-overlay {
+    top: 23%;
+  }
+
+  .gradient-section .banner .parallax-container .second-text-overlay {
+    top: 15%;
+  }
 }
 
 .work-play-section {
@@ -103,6 +504,18 @@ body {
 .work-play-section .container .row #animated-text span:nth-child(14),
 .work-play-section .container .row #animated-text span:nth-child(15) {
   color: #ec7100;
+}
+
+@media screen and (max-width: 991px) {
+  .work-play-section .container .row #animated-text {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .work-play-section .container .row #animated-text {
+    width: 90%;
+  }
 }
 
 .tablet-section {
@@ -185,6 +598,38 @@ body {
   z-index: 0;
 }
 
+@media screen and (max-width: 767px) {
+  .tablet-section .container .row .main-menu ul li a svg {
+    display: none;
+  }
+  .tablet-section .container .row .main-menu ul li a {
+    white-space: nowrap;
+    width: max-content;
+  }
+}
+
+@media screen and (max-width: 584px) {
+  .tablet-section .container .row .card-group .card .content {
+    width: 95%;
+    margin: auto;
+    height: auto;
+  }
+  .tablet-section .container .row .main-menu {
+    width: 90% !important;
+    padding: 10px 5px;
+  }
+  .tablet-section .container .row .main-menu ul li a {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 472px) {
+  .tablet-section .container .row .main-menu ul li a {
+    font-size: 0.7rem;
+    min-width: 0px;
+  }
+}
+
 /* Horizontal scrolling */
 .horizontal-scrolling {
   background-color: #111f3c;
@@ -208,7 +653,7 @@ body {
 
 .section {
   height: 100vh;
-  width: 95vw;
+  width: 1350px;
   float: left;
   position: relative;
   display: flex;
@@ -231,7 +676,8 @@ body {
   height: 100.66001813vh;
   width: 100vw;
   z-index: 99;
-  left: 260px;
+  left: 10.8%;
+  transform: translateX(calc(-101vw + 10.8vw));
 }
 
 .horizontal-scrolling .section h3 {
@@ -287,12 +733,13 @@ body {
 .heading-3 {
   position: absolute;
   left: -60px;
-  bottom: 130px;
+  bottom: 90px;
   text-align: center;
 }
 
 .icon-container {
   padding: 40px !important;
+  bottom: 260px;
 }
 
 .icon-container-2 {
@@ -300,6 +747,7 @@ body {
   bottom: 18%;
   right: 20%;
   padding: 50px !important;
+  width: max-content;
 }
 
 .heading-4 {
@@ -307,6 +755,7 @@ body {
   right: 10%;
   bottom: 45%;
   text-align: center;
+  z-index: 1;
 }
 
 .icon-container-3 {
@@ -471,6 +920,7 @@ body {
   top: 10px;
   left: 10px;
   text-align: left;
+  z-index: 10;
 }
 
 .teams-card .content h4 {
@@ -499,6 +949,36 @@ body {
   top: 100px;
   left: 0;
   transition: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .teams-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .teams-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bouncing-circle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .teams-card {
+    height: 250px;
+  }
+  .teams-card-container {
+    gap: 15px;
+  }
+  .teams-card .ellipse {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #ec7100;
+    z-index: 1;
+  }
 }
 
 /* Join us Section */
@@ -555,6 +1035,23 @@ body {
 .join-us-section > div {
   text-align: left;
   margin-left: 160px;
+}
+
+@media screen and (max-width: 1085px) {
+  .join-us-section > div {
+    margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .join-us-section img {
+    display: none;
+  }
+  .join-us-section > div {
+    text-align: center;
+    margin: 0 auto;
+    width: 95%;
+  }
 }
 
 /* Footer */
@@ -918,9 +1415,9 @@ body {
 }
 
 @media screen and (max-width: 990px) {
-  h1 {
+  /* h1 {
     font-size: 2.5rem !important;
-  }
+  } */
   .image-slider img {
     width: 200px;
   }
@@ -953,9 +1450,9 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-  h1 {
+  /* h1 {
     font-size: 2.2rem !important;
-  }
+  } */
   h1 br {
     display: none;
   }
@@ -1142,101 +1639,8 @@ body {
   }
 }
 
-@media screen and (max-width: 1075px) {
-  .gradient-section .banner .parallax-container .text-overlay {
-    top: 10%;
-  }
-}
-
 @media (max-width: 991px) {
   .tablet-section .container .row .main-menu {
-    width: 80%;
-  }
-} /*# sourceMappingURL=about.css.map */
-
-@media screen and (max-width: 940px) {
-  .gradient-section .banner {
-    height: 110vh;
-  }
-  .gradient-section .banner .parallax-container .text-overlay {
-    top: 8%;
-  }
-  .gradient-section .banner .parallax-container .second-text-overlay {
-    top: 2%;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .gradient-section .banner .parallax-container .text-overlay {
-    top: 10%;
-  }
-}
-
-@media screen and (max-width: 780px) {
-  .gradient-section .banner .parallax-container .text-overlay {
-    top: 12%;
-  }
-  .gradient-section .banner .parallax-container .second-text-overlay {
-    top: 4%;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .gradient-section .banner .parallax-container .text-overlay {
-    top: 14%;
-  }
-  .gradient-section .banner .parallax-container .second-text-overlay {
-    top: 5%;
-  }
-}
-
-@media screen and (max-width: 630px) {
-  .gradient-section .banner .parallax-container .text-overlay {
-    top: 16%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .gradient-section .banner .parallax-container .text-overlay {
-    top: 18%;
-  }
-  .gradient-section .banner .parallax-container .second-text-overlay {
-    top: 7%;
-  }
-}
-
-@media screen and (max-width: 1920px) and (max-height: 1080px) {
-  .horizontal-scrolling .wrapper .svg-line {
-    left: 274px;
-  }
-}
-
-@media screen and (max-width: 1366px) and (max-height: 768px) {
-  .horizontal-scrolling .wrapper .svg-line {
-    left: 230px;
-  }
-}
-
-@media screen and (max-width: 1280px) and (max-height: 1024px) {
-  .horizontal-scrolling .wrapper .svg-line {
-    left: 40px;
-  }
-}
-
-@media screen and (max-width: 1024px) and (max-height: 768px) {
-  .horizontal-scrolling .wrapper .svg-line {
-    left: 85px;
-  }
-}
-
-@media screen and (max-width: 768px) and (max-height: 1024px) {
-  .horizontal-scrolling .wrapper .svg-line {
-    left: -180px;
-  }
-}
-
-@media screen and (max-width: 1024px) and (max-height: 768px) {
-  .horizontal-scrolling .wrapper .svg-line {
-    left: 80px;
+    width: 100%;
   }
 }
