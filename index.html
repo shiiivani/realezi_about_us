@@ -536,31 +536,6 @@
   <script src="assets/js/rive-animations.js"></script>
   <!-- <script src="assets/js/rocket-with-clouds.js"></script> -->
   <!-- <script>
-    function adjustTopValues() {
-      // Get the current window height
-      let windowHeight = window.innerHeight;
-
-      // Set an initial base value for top (e.g., 5%)
-      let baseTopValue = 9;  // Starting point for top value in percentage
-      // For each pixel change, reduce the top by 0.05%
-      // Reference height is 1000px, adjust according to your base size
-      let reductionFactor = (1000 - windowHeight) * 0.05; // 0.05% for every 1px
-
-      // Calculate new top value
-      let topValue = baseTopValue - reductionFactor;
-
-      // Apply the new top value to both elements
-      document.querySelector('.gradient-section .banner .parallax-container .text-overlay').style.top = `${topValue}%`;
-      document.querySelector('.gradient-section .banner .parallax-container .second-text-overlay').style.top = `${topValue - 0.5}%`; // Adjust second element slightly
-    }
-
-    // Run when the page loads
-    window.onload = adjustTopValues;
-
-    // Listen for window resize events to adjust the top value dynamically on height change
-    window.addEventListener('resize', adjustTopValues);
-  </script> -->
-  <!-- <script>
     function adjustLeft() {
       const baseScreenWidth = 1440;
       let baseLeftPercentage = 10.8;
@@ -623,6 +598,32 @@
 
     window.addEventListener('resize', adjustLayout);
   </script> -->
+  <script>
+    function adjustSectionWidth() {
+      const baseScreenWidth = 1440;
+      const baseSectionWidth = 1350;
+      const stepSize = 0.2; // Reducing 0.05px for every 1px screen width reduction
+      const screenWidth = window.innerWidth;
+
+
+      // Continue normal calculations for other screen widths
+      const difference = baseScreenWidth - screenWidth;
+      const steps = Math.round(difference); // Number of pixels the screen width has reduced
+      let newWidth = baseSectionWidth - (steps * stepSize);
+
+      // Optional: Set a minimum width limit for the section
+      if (newWidth < 500) {
+        newWidth = 500; // Minimum width threshold
+      }
+
+      // Apply new width to the section
+      document.querySelector('.section').style.width = newWidth + 'px';
+    }
+
+    window.addEventListener('load', adjustSectionWidth);
+    window.addEventListener('resize', adjustSectionWidth);
+
+  </script>
 </body>
 
 </html>
