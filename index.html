@@ -98,7 +98,7 @@
         <div class="card-group justify-content-center pt-4">
           <div class="card">
             <div class="content" id="tablet">
-              <img src="./assets/img/screenshot.png" alt="" width="100%">
+              <img id="tablet-image" src="./assets/img/screenshot.png" alt="" width="100%">
 
               <div id=" glow" class="glow">
               </div>
@@ -107,7 +107,7 @@
         </div>
         <div id="main-menu" class="main-menu mt-4 position-relative">
           <ul class="m-0 d-flex justify-content-between">
-            <li class="active">
+            <li class="active" data-img="assets/img/screenshot.png">
               <a class="text-capitalize py-1 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -116,7 +116,7 @@
                 </svg>
                 Home</a>
             </li>
-            <li>
+            <li data-img="assets/img/services.png">
               <a class="text-capitalize py-1 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -125,7 +125,7 @@
                 </svg>
                 Service</a>
             </li>
-            <li>
+            <li data-img="./assets/img/plans.png">
               <a class="py-1 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path
@@ -134,7 +134,7 @@
                 </svg>
                 Future plans</a>
             </li>
-            <li>
+            <li data-img="./assets/img/services.png">
               <a class="text-capitalize py-1 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M19 19H5" stroke="#111F3C" stroke-width="2" stroke-linecap="round" />
@@ -147,7 +147,7 @@
                 </svg>
                 Data</a>
             </li>
-            <li>
+            <li data-img="./assets/img/plans.png">
               <a class="text-capitalize py-1 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path
@@ -190,23 +190,36 @@
             <div class="text-circle text-7">World-class digital</div>
             <div class="text-circle text-8">World-class digital</div>
           </span>
-          <h3 class="heading-2">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
+          <h3 class="heading-2">The search for the right<br> place has been not only about<br> the space between walls.
+          </h3>
         </section>
         <section id="section-1" class="section">
-          <span class="icon-container icon-containers icon-2 position-absolute mt-3" id="title1">
-            <img src="./assets/img/handshake.png" alt="Handshake icon" width="100px">
+          <span class="icon-container icon-containers position-absolute mt-3" id="title1">
+            <img src="./assets/img/handshake.png" alt="Handshake icon" width="120px">
           </span>
-          <h3 class="heading-3">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
+          <h3 class="heading-3">It has been about <span style="color: #EC7100">creating trust<br> and ensuring</span>
+            that
+            the buyer<br> is aware that he or she is in safe<br> hands throughout the process.</h3>
+          <h3 class="heading-4">As the world evolved. ..</h3>
           <span class="icon-container-2 icon-containers icon-3" id="title1">
-            <img src="./assets/img/transparency.png" alt="Magnifying glass icon" width="70px">
+            <img src="./assets/img/idea.png" alt="Magnifying glass icon" width="70px">
           </span>
-          <h3 class="heading-4">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
+          <h3 class="heading-5">The market was changing, so did<br> the way we search for homes. We provide<br> you with
+            a
+            better journey than before,<br> <span style="color: #EC7100">with our revolutionary technology.</span></h3>
         </section>
         <section id="section-2" class="section">
+          <h3 class="heading-6 text-center">It adds to the imperative of<br> sustainability that, people all over<br>
+            the world must
+            have a
+            fair<br> chance at picking a life. ..</h3>
           <span class="icon-container-3 icon-containers position-absolute" id="title2">
-            <img src="./assets/img/idea.png" alt="" width="65px">
+            <img src="./assets/img/transparency.png" alt="" width="65px">
           </span>
-          <h3 class="heading-5">Since the time of<br> hunters and gatherers<br> 12,000 years ago...</h3>
+          <h3 class="heading-7">…And <span style="color: #EC7100">transparency is the key.</span><br> We avoid the
+            complex and prefer<br> straight-forward solutions so that<br> you can make informed choices<br> throughout
+            the
+            process.</h3>
         </section>
       </div>
     </div>
@@ -537,43 +550,155 @@
   <!-- <script src="assets/js/rocket-with-clouds.js"></script> -->
   <!-- <script>
     function adjustLeft() {
+      console.log("resizing width")
       const baseScreenWidth = 1440;
       let baseLeftPercentage = 10.8;
       let baseRightPercentage = 20;
+
+      let baseHeading3Left = -60;
+      let baseIcon2Left = 0;
+
+      let baseIconContainer2Right = 20;
+      let baseHeading4Right = 10;
+
+      let baseIconContainer3Left = 35;
+      let baseHeading5Left = 28;
+
       const stepSize = 0.07;
-      const stepSize2 = 0.1;
       const screenWidth = window.innerWidth;
 
-      // Special case for 1200px width
-      if (screenWidth === 1200) {
-        document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = '10.25%';
-        document.querySelector('.heading-3').style.left = '12%'; // Adjust left for heading-3
-        document.querySelector('.icon-2').style.left = '16%';    // Adjust left for icon-2
-        document.querySelector('.heading-4').style.right = '-10%'; // Adjust left for heading-4
-        document.querySelector('.icon-3').style.right = '0%';    // Adjust right for icon-3
-        return;
+      if (screenWidth <= 1057) {
+        baseIconContainer3Left = 43;
+        baseHeading5Left = 35;
       }
 
-      // Continue normal calculations for other screen widths
       const difference = baseScreenWidth - screenWidth;
       const steps = Math.round(difference / 32);
 
       let newLeft = baseLeftPercentage - (steps * stepSize);
-      let newIcon2Left = steps * stepSize2;
-      let newRight = baseRightPercentage - (steps * stepSize);
 
-      // Apply new left values
+      let newHeading3Left = baseHeading3Left + (steps * 22);
+      let newIcon2Left = baseIcon2Left + (steps * 25);
+
+      let newIconContainer2Right = baseIconContainer2Right - (steps * 3);
+      let newHeading4Right = baseHeading4Right - (steps * 3);
+
+      let newIconContainer3Left = 43 + (steps * 5);
+      let newHeading5Left = 35 + (steps * 5);
+
       document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = newLeft + '%';
-      document.querySelector('.heading-3').style.left = (newLeft + - 6) + '%'; // Adjust heading-3
-      document.querySelector('.icon-2').style.left = (newIcon2Left + 12) + '%';    // Adjust icon-2
-      document.querySelector('.heading-4').style.right = (newRight + -16) + '%'; // Adjust heading-4
-      document.querySelector('.icon-3').style.right = (newRight + -8) + '%';     // Adjust right for icon-3
+      document.querySelector('.heading-3').style.left = newHeading3Left + 'px';
+      document.querySelector('.icon-2').style.left = newIcon2Left + 'px';
+
+      document.querySelector('.icon-container-2').style.right = newIconContainer2Right + '%';
+      document.querySelector('.heading-4').style.right = newHeading4Right + '%';
+
+      document.querySelector('.icon-container-3').style.left = newIconContainer3Left + '%';
+      document.querySelector('.heading-5').style.left = newHeading5Left + '%';
     }
 
-    window.addEventListener('load', adjustLeft);
-    window.addEventListener('resize', adjustLeft);
+    function adjustHeight() {
+      const baseScreenHeight = 778;
+      let baseLeftPercentage = 10.8;
 
+      const stepSize = 0.12;
+      const screenHeight = window.innerHeight;
+
+      const difference = baseScreenHeight - screenHeight;
+      const steps = Math.round(difference / 32);
+
+      let newLeft = baseLeftPercentage + (steps * stepSize);
+      document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = newLeft + '%';
+    }
+
+    window.addEventListener('load', function () {
+      adjustLeft();
+      adjustHeight();
+    });
+
+    window.addEventListener('resize', function () {
+      adjustLeft();
+      adjustHeight();
+    });  
   </script> -->
+
+  <!-- <script>
+    function adjustPosition() {
+
+      // Base screen width and height
+      const baseScreenWidth = 1440;
+      const baseScreenHeight = 778;
+
+      // Base left and right percentages for width and height adjustments
+      let baseLeftPercentage = 10.8;
+      let baseRightPercentage = 20;
+
+      // Base positions for headings and icons
+      let baseHeading3Left = -80;
+      let baseIcon2Left = 0;
+
+      let baseIconContainer2Right = 20;
+      let baseHeading5Right = 0;
+
+      let baseIconContainer3Left = 35;
+      let baseHeading7Left = 28;
+
+      // Base bottom values for icon-container and heading-3
+      let baseIcon2Bottom = 200;  // Adjust this value based on your layout
+      let baseHeading3Bottom = 20; // Adjust this value based on your layout
+
+      // Step sizes for width and height adjustments
+      const widthStepSize = 0.07;
+      const heightStepSize = 0.12;
+
+      // Current screen dimensions
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      // Calculate the number of adjustment steps for width and height
+      const widthDifference = baseScreenWidth - screenWidth;
+      const widthSteps = Math.round(widthDifference / 32);
+
+      const heightDifference = baseScreenHeight - screenHeight;
+      const heightSteps = Math.round(heightDifference / 32);
+
+      // Calculate the new left values for the SVG line, headings, and icons
+      let newLeft = baseLeftPercentage - (widthSteps * widthStepSize) + (heightSteps * heightStepSize);
+
+      let newHeading3Left = baseHeading3Left + (widthSteps * 22) + (heightSteps * 15);
+      let newIcon2Left = baseIcon2Left + (widthSteps * 25) + (heightSteps * 18);
+
+      let newIconContainer2Right = baseIconContainer2Right - (widthSteps * 3) - (heightSteps * 2);
+      let newHeading4Right = baseHeading4Right - (widthSteps * 3) - (heightSteps * 2);
+
+      let newIconContainer3Left = baseIconContainer3Left + (widthSteps * 5) + (heightSteps * 4);
+      let newHeading5Left = baseHeading5Left + (widthSteps * 5) + (heightSteps * 4);
+
+      // Calculate new bottom values for icon-container and heading-3 based on height adjustment
+      let newIcon2Bottom = baseIcon2Bottom + (5 * 5); // Adjust the multiplier as needed
+      let newHeading3Bottom = baseHeading3Bottom + (4 * 5); // Adjust the multiplier as needed
+
+      // Apply the new values to the DOM elements
+      document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = newLeft + '%';
+      document.querySelector('.heading-3').style.left = newHeading3Left + 'px';
+      document.querySelector('.icon-container').style.left = newIcon2Left + 'px';
+
+      document.querySelector('.icon-container-2').style.right = newIconContainer2Right + '%';
+      document.querySelector('.heading-5').style.right = newHeading4Right + '%';
+
+      document.querySelector('.icon-container-3').style.left = newIconContainer3Left + '%';
+      document.querySelector('.heading-7').style.left = newHeading5Left + '%';
+
+      // Set the bottom values for icon-2 and heading-3
+      document.querySelector('.icon-container').style.bottom = newIcon2Bottom + 'px';
+      document.querySelector('.heading-3').style.bottom = newHeading3Bottom + 'px';
+    }
+
+    // Add event listeners for both load and resize
+    window.addEventListener('load', adjustPosition);
+    window.addEventListener('resize', adjustPosition);
+  </script> -->
+
   <!-- <script>
     function adjustLayout() {
       const baseScreenWidth = 1440;
@@ -598,11 +723,11 @@
 
     window.addEventListener('resize', adjustLayout);
   </script> -->
-  <script>
+  <!-- <script>
     function adjustSectionWidth() {
       const baseScreenWidth = 1440;
       const baseSectionWidth = 1350;
-      const stepSize = 0.2; // Reducing 0.05px for every 1px screen width reduction
+      const stepSize = 0.25; // Reducing 0.05px for every 1px screen width reduction
       const screenWidth = window.innerWidth;
 
 
@@ -622,6 +747,26 @@
 
     window.addEventListener('load', adjustSectionWidth);
     window.addEventListener('resize', adjustSectionWidth);
+
+  </script> -->
+  <script>
+    document.querySelectorAll('#main-menu li').forEach(function (menuItem) {
+      menuItem.addEventListener('click', function () {
+        // Get the image source from the data-img attribute
+        var newImageSrc = this.getAttribute('data-img');
+
+        // Change the src attribute of the image in the #tablet div
+        document.getElementById('tablet-image').src = newImageSrc;
+
+        // Remove active class from all menu items
+        document.querySelectorAll('#main-menu li').forEach(function (item) {
+          item.classList.remove('active');
+        });
+
+        // Add active class to the clicked menu item
+        this.classList.add('active');
+      });
+    });
 
   </script>
 </body>

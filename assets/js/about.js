@@ -128,9 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
     navBar.appendChild(hoverLine);
 
     gsap.set([slideLine, hoverLine], {
-      height: 30,
+      height: 32,
       position: "absolute",
-      bottom: 9,
+      bottom: 10.5,
       borderRadius: "64px",
       zIndex: 1,
       transformOrigin: "left center",
@@ -489,6 +489,8 @@ $(document).ready(function () {
       ".heading-4",
       ".icon-container-2",
       ".heading-5",
+      ".heading-6",
+      ".heading-7",
       ".icon-container-3",
     ],
     { opacity: 0, y: 20 }
@@ -516,7 +518,6 @@ $(document).ready(function () {
       var dashArray = progress * 4 + ", 1";
       $(".svg-line path").attr("stroke-dasharray", dashArray);
       var progressbar = e.progress.toFixed(2);
-
       // Trigger animations based on the progress value
       if (progressbar >= 0.12) {
         gsap.to(".heading-1", {
@@ -554,8 +555,17 @@ $(document).ready(function () {
         });
       }
 
-      if (progressbar >= 0.41) {
+      if (progressbar >= 0.35) {
         gsap.to(".heading-4", {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power1.out",
+        });
+      }
+
+      if (progressbar >= 0.45) {
+        gsap.to(".heading-5", {
           opacity: 1,
           y: 0,
           duration: 0.5,
@@ -573,7 +583,7 @@ $(document).ready(function () {
       }
 
       if (progressbar >= 0.63) {
-        gsap.to(".heading-5", {
+        gsap.to(".heading-6", {
           opacity: 1,
           y: 0,
           duration: 0.5,
@@ -581,7 +591,16 @@ $(document).ready(function () {
         });
       }
 
-      if (progressbar >= 0.69) {
+      if (progressbar >= 0.7) {
+        gsap.to(".heading-7", {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power1.out",
+        });
+      }
+
+      if (progressbar >= 0.75) {
         gsap.to(".icon-container-3", {
           opacity: 1,
           y: 0,
@@ -590,7 +609,6 @@ $(document).ready(function () {
         });
       }
 
-      // Check if progress is at 1.0 to add the id="prev-div"
       if (progressbar >= 1.0) {
         $("#js-wrapper").attr("id", "prev-div");
         startRocketAnimation();
