@@ -1,45 +1,3 @@
-// AOS.init();
-// let layout = new rive.Layout({
-//   fit: rive.Fit.Fill,
-// });
-// const rocket = new rive.Rive({
-//   src: "./assets/riv/rocket.riv",
-//   canvas: document.getElementById("rocket"),
-//   autoplay: true,
-//   layout: layout,
-// });
-
-// window.addEventListener("scroll", () => {
-//   /* check if even the tip of rocket div is visible on the screen */
-//   let rocketDiv = document.getElementById("rocket-div");
-//   let rocketDivRect = rocketDiv.getBoundingClientRect();
-//   let prevDiv = document.getElementById("prev-div");
-//   let prevDivRect = prevDiv.getBoundingClientRect();
-//   let rocketTxt = document.getElementById("rocket-txt");
-
-//   /* parallax the rocket div slightly above when in view*/
-//   if (rocketDivRect.top < window.innerHeight && rocketDivRect.bottom > 0) {
-//     rocketDiv.style.position = "sticky";
-//     prevDiv.style.position = "sticky";
-//     prevDiv.style.top = "0px";
-
-//     /* scale down prevDiv children */
-//     let scaleCalc = 1 + (rocketDivRect.top / window.innerHeight - 0.5);
-//     console.log(scaleCalc);
-//     prevDiv.style.transform = `scale(${
-//       scaleCalc >= 0.1 && scaleCalc < 1
-//         ? scaleCalc
-//         : scaleCalc < 0
-//         ? 0
-//         : scaleCalc > 1 && 1
-//     })`;
-//   } else {
-//     rocketDiv.style.position = "relative";
-//     prevDiv.style.position = "relative";
-//     prevDiv.style.top = "0px";
-//     prevDiv.style.transform = `scale(1)`;
-//   }
-// });
 $(document).ready(function () {
   var controller = new ScrollMagic.Controller();
 
@@ -167,7 +125,7 @@ $(document).ready(function () {
       // Check if progress is at 1.0 to add the id="prev-div"
       if (progressbar >= 1.0) {
         $("#js-wrapper").attr("id", "prev-div");
-        startRocketAnimation(); // Start the rocket animation
+        startRocketAnimation();
       }
     })
     .addTo(controller);
@@ -211,7 +169,9 @@ $(document).ready(function () {
       src: "./assets/riv/rocket.riv",
       canvas: document.getElementById("rocket"),
       autoplay: true,
-      layout: layout,
+      onLoad: () => {
+        rocket.resizeDrawingSurfaceToCanvas();
+      },
     });
 
     window.addEventListener("scroll", handleRocketScroll);
@@ -225,26 +185,15 @@ $(document).ready(function () {
         rocketDiv.style.position = "sticky";
         prevDiv.style.position = "fixed";
 
-        // // Parallax scaling effect for prevDiv
-        // let scaleCalc = 1 + (rocketDivRect.top / window.innerHeight - 0.5);
-        // prevDiv.style.transform = `scale(${
-        //   scaleCalc >= 0.1 && scaleCalc < 1
-        //     ? scaleCalc
-        //     : scaleCalc < 0
-        //     ? 0
-        //     : scaleCalc > 1 && 1
-        // })`;
         // Remove fixed position once the rocket touches the top of the viewport
         if (rocketDivRect.top <= 0) {
-          prevDiv.style.position = "relative";
-          $("#js-wrapper").css("position", "relative");
-          horizontalScene.removePin();
+          prevDiv.style.position = "fixed";
+          $("#js-wrapper").css("position", "fixed");
+          // horizontalScene.removePin();
           window.removeEventListener("scroll", handleRocketScroll);
         }
       } else {
         // Reset styles if rocket is out of view
-        rocketDiv.style.position = "relative";
-        prevDiv.style.position = "relative";
         prevDiv.style.transform = "scale(1)";
       }
     }

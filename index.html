@@ -47,7 +47,7 @@
             <div class="logo-menu d-flex align-items-center">
               <div class="logo">
                 <a href="about.html">
-                  <img src="assets/img/realezi_new_logo.svg" alt="Realezi" width="150px">
+                  <img src="assets/img/logo2.png" alt="Realezi" width="150px">
                 </a>
               </div>
             </div>
@@ -167,7 +167,7 @@
   <!-- tablat-section end -->
 
   <!-- svg-line-scroll section start -->
-  <section class="horizontal-scrolling">
+  <section class="horizontal-scrolling larger-screen">
     <div class="wrapper" id="js-wrapper">
       <div class="sections" id="slideContainer">
         <div class="svg-line">
@@ -225,6 +225,30 @@
     </div>
   </section>
   <!-- svg-line-scroll section end -->
+
+  <section class="horizontal-scrolling smaller-screen text-center">
+    <div class="content m-auto">
+      <h3 class="animate">It has been about <span style="color: #EC7100">creating trust and ensuring</span>
+        that
+        the buyer is aware that he or she is in safe hands throughout the process.</h3>
+      <div class="icon1 icon mt-3 animate" id="title1">
+        <img src="./assets/img/handshake.png" alt="Handshake icon" width="130px">
+      </div>
+      <h3 class="animate">The market was changing, so did the way we search for homes. We provide you with
+        a
+        better journey than before, <span style="color: #EC7100">with our revolutionary technology.</span></h3>
+      <div class="icon2 icon animate" id="title1">
+        <img src="./assets/img/idea.png" alt="Magnifying glass icon" width="90px">
+      </div>
+      <h3 class="animate">…And <span style="color: #EC7100">transparency is the key.</span> We avoid the
+        complex and prefer straight-forward solutions so that you can make informed choices throughout
+        the
+        process.</h3>
+      <div class="icon3 icon animate" id="title2">
+        <img src="./assets/img/transparency.png" alt="" width="80px">
+      </div>
+    </div>
+  </section>
 
   <!-- Rocket Section Start-->
   <section id="rocket-div" style="width: calc(100vw - (100vw - 100%))">
@@ -547,227 +571,61 @@
   <script defer src="assets/js/teams-section-animation.js"></script>
   <script defer src="./assets/js/footer.js"></script>
   <script src="assets/js/rive-animations.js"></script>
-  <!-- <script src="assets/js/rocket-with-clouds.js"></script> -->
-  <!-- <script>
-    function adjustLeft() {
-      console.log("resizing width")
-      const baseScreenWidth = 1440;
-      let baseLeftPercentage = 10.8;
-      let baseRightPercentage = 20;
-
-      let baseHeading3Left = -60;
-      let baseIcon2Left = 0;
-
-      let baseIconContainer2Right = 20;
-      let baseHeading4Right = 10;
-
-      let baseIconContainer3Left = 35;
-      let baseHeading5Left = 28;
-
-      const stepSize = 0.07;
-      const screenWidth = window.innerWidth;
-
-      if (screenWidth <= 1057) {
-        baseIconContainer3Left = 43;
-        baseHeading5Left = 35;
-      }
-
-      const difference = baseScreenWidth - screenWidth;
-      const steps = Math.round(difference / 32);
-
-      let newLeft = baseLeftPercentage - (steps * stepSize);
-
-      let newHeading3Left = baseHeading3Left + (steps * 22);
-      let newIcon2Left = baseIcon2Left + (steps * 25);
-
-      let newIconContainer2Right = baseIconContainer2Right - (steps * 3);
-      let newHeading4Right = baseHeading4Right - (steps * 3);
-
-      let newIconContainer3Left = 43 + (steps * 5);
-      let newHeading5Left = 35 + (steps * 5);
-
-      document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = newLeft + '%';
-      document.querySelector('.heading-3').style.left = newHeading3Left + 'px';
-      document.querySelector('.icon-2').style.left = newIcon2Left + 'px';
-
-      document.querySelector('.icon-container-2').style.right = newIconContainer2Right + '%';
-      document.querySelector('.heading-4').style.right = newHeading4Right + '%';
-
-      document.querySelector('.icon-container-3').style.left = newIconContainer3Left + '%';
-      document.querySelector('.heading-5').style.left = newHeading5Left + '%';
-    }
-
-    function adjustHeight() {
-      const baseScreenHeight = 778;
-      let baseLeftPercentage = 10.8;
-
-      const stepSize = 0.12;
-      const screenHeight = window.innerHeight;
-
-      const difference = baseScreenHeight - screenHeight;
-      const steps = Math.round(difference / 32);
-
-      let newLeft = baseLeftPercentage + (steps * stepSize);
-      document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = newLeft + '%';
-    }
-
-    window.addEventListener('load', function () {
-      adjustLeft();
-      adjustHeight();
-    });
-
-    window.addEventListener('resize', function () {
-      adjustLeft();
-      adjustHeight();
-    });  
-  </script> -->
-
-  <!-- <script>
-    function adjustPosition() {
-
-      // Base screen width and height
-      const baseScreenWidth = 1440;
-      const baseScreenHeight = 778;
-
-      // Base left and right percentages for width and height adjustments
-      let baseLeftPercentage = 10.8;
-      let baseRightPercentage = 20;
-
-      // Base positions for headings and icons
-      let baseHeading3Left = -80;
-      let baseIcon2Left = 0;
-
-      let baseIconContainer2Right = 20;
-      let baseHeading5Right = 0;
-
-      let baseIconContainer3Left = 35;
-      let baseHeading7Left = 28;
-
-      // Base bottom values for icon-container and heading-3
-      let baseIcon2Bottom = 200;  // Adjust this value based on your layout
-      let baseHeading3Bottom = 20; // Adjust this value based on your layout
-
-      // Step sizes for width and height adjustments
-      const widthStepSize = 0.07;
-      const heightStepSize = 0.12;
-
-      // Current screen dimensions
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-
-      // Calculate the number of adjustment steps for width and height
-      const widthDifference = baseScreenWidth - screenWidth;
-      const widthSteps = Math.round(widthDifference / 32);
-
-      const heightDifference = baseScreenHeight - screenHeight;
-      const heightSteps = Math.round(heightDifference / 32);
-
-      // Calculate the new left values for the SVG line, headings, and icons
-      let newLeft = baseLeftPercentage - (widthSteps * widthStepSize) + (heightSteps * heightStepSize);
-
-      let newHeading3Left = baseHeading3Left + (widthSteps * 22) + (heightSteps * 15);
-      let newIcon2Left = baseIcon2Left + (widthSteps * 25) + (heightSteps * 18);
-
-      let newIconContainer2Right = baseIconContainer2Right - (widthSteps * 3) - (heightSteps * 2);
-      let newHeading4Right = baseHeading4Right - (widthSteps * 3) - (heightSteps * 2);
-
-      let newIconContainer3Left = baseIconContainer3Left + (widthSteps * 5) + (heightSteps * 4);
-      let newHeading5Left = baseHeading5Left + (widthSteps * 5) + (heightSteps * 4);
-
-      // Calculate new bottom values for icon-container and heading-3 based on height adjustment
-      let newIcon2Bottom = baseIcon2Bottom + (5 * 5); // Adjust the multiplier as needed
-      let newHeading3Bottom = baseHeading3Bottom + (4 * 5); // Adjust the multiplier as needed
-
-      // Apply the new values to the DOM elements
-      document.querySelector('.horizontal-scrolling .wrapper .svg-line').style.left = newLeft + '%';
-      document.querySelector('.heading-3').style.left = newHeading3Left + 'px';
-      document.querySelector('.icon-container').style.left = newIcon2Left + 'px';
-
-      document.querySelector('.icon-container-2').style.right = newIconContainer2Right + '%';
-      document.querySelector('.heading-5').style.right = newHeading4Right + '%';
-
-      document.querySelector('.icon-container-3').style.left = newIconContainer3Left + '%';
-      document.querySelector('.heading-7').style.left = newHeading5Left + '%';
-
-      // Set the bottom values for icon-2 and heading-3
-      document.querySelector('.icon-container').style.bottom = newIcon2Bottom + 'px';
-      document.querySelector('.heading-3').style.bottom = newHeading3Bottom + 'px';
-    }
-
-    // Add event listeners for both load and resize
-    window.addEventListener('load', adjustPosition);
-    window.addEventListener('resize', adjustPosition);
-  </script> -->
-
-  <!-- <script>
-    function adjustLayout() {
-      const baseScreenWidth = 1440;
-      const baseScreenHeight = 778;
-      let baseLeftPercentage = 10.8;
-      const stepSize = 0.05;
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-
-      const widthDifference = baseScreenWidth - screenWidth;
-      const steps = Math.round(widthDifference / 32);
-      let newLeft = baseLeftPercentage - (steps * stepSize);
-
-      let newHeight = (screenHeight / baseScreenHeight) * 100.66; // Adjust height relative to screen height
-
-      const svgLine = document.querySelector('.horizontal-scrolling .wrapper .svg-line');
-      svgLine.style.left = newLeft + '%';
-      svgLine.style.height = newHeight + 'vh'; // Update height in 'vh' (viewport height units)
-    }
-
-    window.addEventListener('load', adjustLayout);
-
-    window.addEventListener('resize', adjustLayout);
-  </script> -->
-  <!-- <script>
-    function adjustSectionWidth() {
-      const baseScreenWidth = 1440;
-      const baseSectionWidth = 1350;
-      const stepSize = 0.25; // Reducing 0.05px for every 1px screen width reduction
-      const screenWidth = window.innerWidth;
-
-
-      // Continue normal calculations for other screen widths
-      const difference = baseScreenWidth - screenWidth;
-      const steps = Math.round(difference); // Number of pixels the screen width has reduced
-      let newWidth = baseSectionWidth - (steps * stepSize);
-
-      // Optional: Set a minimum width limit for the section
-      if (newWidth < 500) {
-        newWidth = 500; // Minimum width threshold
-      }
-
-      // Apply new width to the section
-      document.querySelector('.section').style.width = newWidth + 'px';
-    }
-
-    window.addEventListener('load', adjustSectionWidth);
-    window.addEventListener('resize', adjustSectionWidth);
-
-  </script> -->
   <script>
+    let hasReloaded = localStorage.getItem('hasReloaded') || '0';
+
+    // Function to check screen width and reload if necessary
+    function checkScreenWidth() {
+      // Check if the width is below 1200px
+      if (window.innerWidth < 1200) {
+        if (hasReloaded === '0') {
+          localStorage.setItem('hasReloaded', '1');
+          location.reload();
+        }
+      } else if (window.innerWidth >= 1200) {
+        if (hasReloaded === '1') {
+          localStorage.setItem('hasReloaded', '0');
+          location.reload();
+        }
+      }
+    }
+
+    window.addEventListener('resize', checkScreenWidth);
+
+    checkScreenWidth();
+  </script>
+  <!-- <script>
     document.querySelectorAll('#main-menu li').forEach(function (menuItem) {
       menuItem.addEventListener('click', function () {
-        // Get the image source from the data-img attribute
+
         var newImageSrc = this.getAttribute('data-img');
 
-        // Change the src attribute of the image in the #tablet div
         document.getElementById('tablet-image').src = newImageSrc;
 
-        // Remove active class from all menu items
         document.querySelectorAll('#main-menu li').forEach(function (item) {
           item.classList.remove('active');
         });
 
-        // Add active class to the clicked menu item
         this.classList.add('active');
       });
     });
+  </script> -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.5 });
 
+    const elementsToAnimate = document.querySelectorAll('.animate');
+
+    elementsToAnimate.forEach((el) => {
+      observer.observe(el);
+    });
   </script>
 </body>
 
