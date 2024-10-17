@@ -946,6 +946,12 @@ body {
   overflow: hidden;
 }
 
+@media screen and (max-width: 1000px) {
+  #rocket-div {
+    background-color: #111f3c;
+  }
+}
+
 /* Teams Section */
 .teams-section {
   margin-top: -250px;
@@ -1046,6 +1052,18 @@ body {
 @media screen and (max-width: 1050px) {
   .teams-card-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .teams-section {
+    margin-top: -150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .teams-section {
+    margin-top: -250px;
   }
 }
 
@@ -1860,6 +1878,65 @@ body {
   .heading-7 {
     bottom: 20%;
     left: 30.6%;
+  }
+}
+
+@media screen and (max-width: 1522px) and (max-height: 718px) {
+  .horizontal-scrolling .wrapper .svg-line {
+    left: 10.9%;
+    height: 109.66001813vh;
+  }
+
+  .rocket-container {
+    top: 35%;
+  }
+
+  .horizontal-scrolling .section .heading-1 {
+    bottom: 40px;
+    left: 50px;
+  }
+
+  .horizontal-scrolling .section .heading-2 {
+    top: 15px;
+    right: 50px;
+  }
+
+  .heading-3 {
+    bottom: 1%;
+    left: -5%;
+  }
+
+  .icon-container {
+    bottom: 25%;
+  }
+
+  .heading-4 {
+    top: 50px;
+    left: 25%;
+  }
+
+  .icon-container-2 {
+    right: 28%;
+    bottom: 10%;
+  }
+
+  .heading-5 {
+    right: 12%;
+    bottom: 39%;
+  }
+
+  .heading-6 {
+    left: -20%;
+  }
+
+  .icon-container-3 {
+    left: 24%;
+    top: 30%;
+  }
+
+  .heading-7 {
+    bottom: 10%;
+    left: 15%;
   }
 }
 
