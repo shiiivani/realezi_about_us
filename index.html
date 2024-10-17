@@ -572,60 +572,27 @@
   <script defer src="./assets/js/footer.js"></script>
   <script src="assets/js/rive-animations.js"></script>
   <script>
-    let hasReloaded = localStorage.getItem('hasReloaded') || '0';
+    // let hasReloaded = localStorage.getItem('hasReloaded') || '0';
 
-    // Function to check screen width and reload if necessary
-    function checkScreenWidth() {
-      // Check if the width is below 1200px
-      if (window.innerWidth < 1200) {
-        if (hasReloaded === '0') {
-          localStorage.setItem('hasReloaded', '1');
-          location.reload();
-        }
-      } else if (window.innerWidth >= 1200) {
-        if (hasReloaded === '1') {
-          localStorage.setItem('hasReloaded', '0');
-          location.reload();
-        }
-      }
-    }
+    // // Function to check screen width and reload if necessary
+    // function checkScreenWidth() {
+    //   // Check if the width is below 1200px
+    //   if (window.innerWidth < 1200) {
+    //     if (hasReloaded === '0') {
+    //       localStorage.setItem('hasReloaded', '1');
+    //       location.reload();
+    //     }
+    //   } else if (window.innerWidth >= 1200) {
+    //     if (hasReloaded === '1') {
+    //       localStorage.setItem('hasReloaded', '0');
+    //       location.reload();
+    //     }
+    //   }
+    // }
 
-    window.addEventListener('resize', checkScreenWidth);
+    // window.addEventListener('resize', checkScreenWidth);
 
-    checkScreenWidth();
-  </script>
-  <!-- <script>
-    document.querySelectorAll('#main-menu li').forEach(function (menuItem) {
-      menuItem.addEventListener('click', function () {
-
-        var newImageSrc = this.getAttribute('data-img');
-
-        document.getElementById('tablet-image').src = newImageSrc;
-
-        document.querySelectorAll('#main-menu li').forEach(function (item) {
-          item.classList.remove('active');
-        });
-
-        this.classList.add('active');
-      });
-    });
-  </script> -->
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const elementsToAnimate = document.querySelectorAll('.animate');
-
-    elementsToAnimate.forEach((el) => {
-      observer.observe(el);
-    });
+    // checkScreenWidth();
   </script>
 </body>
 
