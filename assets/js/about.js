@@ -62,6 +62,53 @@ gsap.fromTo(
 );
 
 // Glow Effect
+// document.addEventListener("DOMContentLoaded", function () {
+//   const card = document.querySelector("#tablet");
+//   let bounds;
+
+//   function rotateToMouse(e) {
+//     const mouseX = e.clientX;
+//     const mouseY = e.clientY;
+//     const leftX = mouseX - bounds.x;
+//     const topY = mouseY - bounds.y;
+//     const center = {
+//       x: leftX - bounds.width / 2,
+//       y: topY - bounds.height / 2,
+//     };
+//     const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
+
+//     card.style.transform = `
+//     scale3d(1, 1, 1)
+//     rotate3d(
+//       ${center.y / 500},
+//       ${-center.x / 500},
+//       0,
+//       ${Math.log(distance) * 2.5}deg
+//     )
+//   `;
+
+//     const angle = Math.atan2(center.y, center.x) * (180 / Math.PI);
+//     card.querySelector(".glow").style.backgroundImage = `
+//     linear-gradient(
+//       ${angle + 90}deg, /* Rotate the gradient based on mouse position */
+//       #ffffff55 10%,
+//       #0000000f
+//     )
+//   `;
+//   }
+//   document.body.addEventListener("mouseenter", () => {
+//     bounds = card.getBoundingClientRect();
+//     document.addEventListener("mousemove", rotateToMouse);
+//   });
+
+//   document.body.addEventListener("mouseleave", () => {
+//     document.removeEventListener("mousemove", rotateToMouse);
+//     card.style.transform = "";
+//     card.style.background = "";
+//   });
+// });
+
+// Table move and glow effect
 document.addEventListener("DOMContentLoaded", function () {
   const card = document.querySelector("#tablet");
   let bounds;
@@ -77,34 +124,44 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
 
+    // Apply rotation based on mouse movement
     card.style.transform = `
-    scale3d(1, 1, 1)
-    rotate3d(
-      ${center.y / 500},
-      ${-center.x / 500},
-      0,
-      ${Math.log(distance) * 2.5}deg
-    )
-  `;
+      scale3d(1, 1, 1)
+      rotate3d(
+        ${center.y / 500},
+        ${-center.x / 500},
+        0,
+        ${Math.log(distance) * 2.5}deg
+      )
+    `;
 
+    // Update the glow effect based on the angle
     const angle = Math.atan2(center.y, center.x) * (180 / Math.PI);
     card.querySelector(".glow").style.backgroundImage = `
-    linear-gradient(
-      ${angle + 90}deg, /* Rotate the gradient based on mouse position */
-      #ffffff55 10%,
-      #0000000f
-    )
-  `;
+      linear-gradient(
+        ${angle + 90}deg, /* Rotate the gradient based on mouse position */
+        #ffffff25 10%,
+        #0000000f
+      )
+    `;
   }
-  document.body.addEventListener("mouseenter", () => {
+
+  card.addEventListener("mouseenter", () => {
     bounds = card.getBoundingClientRect();
     document.addEventListener("mousemove", rotateToMouse);
   });
 
-  document.body.addEventListener("mouseleave", () => {
+  card.addEventListener("mouseleave", () => {
     document.removeEventListener("mousemove", rotateToMouse);
+
+    // Smoothly reset the rotation and glow effect
+    card.style.transition = "transform 0.5s ease, background 0.5s ease";
     card.style.transform = "";
-    card.style.background = "";
+
+    // Remove the transition after reset
+    setTimeout(() => {
+      card.style.transition = "";
+    }, 500);
   });
 });
 
@@ -118,6 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let activeItem = document.querySelector(
       ".tablet-section .main-menu ul li.active"
     );
+    const smallScreen = window.matchMedia("(max-width: 768px)");
+    const smallerScreen = window.matchMedia("(max-width: 472px)");
+
     let slideLine = document.createElement("div");
     let hoverLine = document.createElement("div");
 
@@ -130,14 +190,34 @@ document.addEventListener("DOMContentLoaded", function () {
     hoverLine.classList.add("hover-line");
     navBar.appendChild(hoverLine);
 
-    gsap.set([slideLine, hoverLine], {
-      height: 32,
-      position: "absolute",
-      bottom: 10.5,
-      borderRadius: "64px",
-      zIndex: 1,
-      transformOrigin: "left center",
-    });
+    if (smallerScreen.matches) {
+      gsap.set([slideLine, hoverLine], {
+        height: 26,
+        position: "absolute",
+        bottom: 4,
+        borderRadius: "64px",
+        zIndex: 1,
+        transformOrigin: "left center",
+      });
+    } else if (smallScreen.matches) {
+      gsap.set([slideLine, hoverLine], {
+        height: 32,
+        position: "absolute",
+        bottom: 9,
+        borderRadius: "64px",
+        zIndex: 1,
+        transformOrigin: "left center",
+      });
+    } else {
+      gsap.set([slideLine, hoverLine], {
+        height: 32,
+        position: "absolute",
+        bottom: 10.5,
+        borderRadius: "64px",
+        zIndex: 1,
+        transformOrigin: "left center",
+      });
+    }
 
     gsap.set(slideLine, {
       width: activeItem.offsetWidth,
@@ -451,6 +531,8 @@ $(document).ready(function () {
       if (progressbar >= 1.0) {
         $("#js-wrapper").attr("id", "prev-div");
         startRocketAnimation();
+      } else {
+        $("#prev-div").attr("id", "js-wrapper");
       }
     })
     .addTo(controller);
